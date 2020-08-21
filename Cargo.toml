@@ -1,5 +1,6 @@
 [package]
 name = "linux-usb-functionfs-sys"
+description = "Naive translation of the Linux functionfs and USB chapter 9 headers."
 version = "0.1.0"
 authors = ["Sid Spry <github@sid.aeam.us>"]
 license = "AGPL-3.0"
