@@ -2,4 +2,5 @@
 Cargo.lock
 
 .*.sw*
+lib/.*.sw*
 ffs-desc-dump

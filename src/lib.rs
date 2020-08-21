@@ -46,9 +46,9 @@ mod linux_usb_functionfs_sys {
                         functionfs_flags_FUNCTIONFS_HAS_SS_DESC).to_le(),
                 length: (mem::size_of::<usb_functionfs_descriptors>() as u32).to_le(),
             },
-            fs_count: (3 as u32).to_le(),
-            hs_count: (3 as u32).to_le(),
-            ss_count: (5 as u32).to_le(),
+            fs_count: 3u32.to_le(),
+            hs_count: 3u32.to_le(),
+            ss_count: 5u32.to_le(),
             fs_descs: usb_functionfs_ep_descs {
                 intf: usb_interface_descriptor {
                     bLength: mem::size_of::<usb_interface_descriptor>() as u8,
@@ -95,7 +95,7 @@ mod linux_usb_functionfs_sys {
                     bDescriptorType: USB_DT_ENDPOINT as u8,
                     bEndpointAddress: 1 | USB_DIR_IN as u8,
                     bmAttributes: USB_ENDPOINT_XFER_BULK as u8,
-                    wMaxPacketSize: (512 as u16).to_le(),
+                    wMaxPacketSize: 512u16.to_le(),
                     bInterval: 0,
                 },
                 source: usb_endpoint_descriptor_no_audio {
@@ -103,7 +103,7 @@ mod linux_usb_functionfs_sys {
                     bDescriptorType: USB_DT_ENDPOINT as u8,
                     bEndpointAddress: 2 | USB_DIR_OUT as u8,
                     bmAttributes: USB_ENDPOINT_XFER_BULK as u8,
-                    wMaxPacketSize: (512 as u16).to_le(),
+                    wMaxPacketSize: 512u16.to_le(),
                     bInterval: 1,
                 },
             },
@@ -124,7 +124,7 @@ mod linux_usb_functionfs_sys {
                     bDescriptorType: USB_DT_ENDPOINT as u8,
                     bEndpointAddress: 1 | USB_DIR_IN as u8,
                     bmAttributes: USB_ENDPOINT_XFER_BULK as u8,
-                    wMaxPacketSize: (1024 as u16).to_le(),
+                    wMaxPacketSize: 1024u16.to_le(),
                     bInterval: 0,
                 },
                 sink_comp: usb_ss_ep_comp_descriptor {
@@ -139,7 +139,7 @@ mod linux_usb_functionfs_sys {
                     bDescriptorType: USB_DT_ENDPOINT as u8,
                     bEndpointAddress: 2 | USB_DIR_OUT as u8,
                     bmAttributes: USB_ENDPOINT_XFER_BULK as u8,
-                    wMaxPacketSize: (1024 as u16).to_le(),
+                    wMaxPacketSize: 1024u16.to_le(),
                     bInterval: 1,
                 },
                 source_comp: usb_ss_ep_comp_descriptor {
